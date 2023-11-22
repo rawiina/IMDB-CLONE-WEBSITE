@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style_i.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title></title>
+  <style type="text/css">
+    .checked {
+  color: orange;
+}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="hmenu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="logo">
+      <p>IMDb</p>
+    </div>
+  </div>
+  <div class="search_con">
+    <div class="search_bar_container"><!--Search element-->
+      <div class="search_bar">
+        <input type="text" name="search" placeholder="Search IMDb" id="search" onkeyup="findMovies()">
+        <button type="submit" id="sb" onclick="findMovies()"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="search_list" id="search_list">
+        <!-- ... (your initial search list content) ... -->
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    
+    <div class="result_grid" id="result_grid">
+      
+    </div>
+    <div class="image_caro">
+      <div class="slide fade">
+<img src="slide1.jpg">
+<div class="text">MOVIE</div>
+</div>
+<div class="slide fade">
+<img src="slide2.jpg" >
+<div class="text">MOVIE</div>
+</div>
+</div>
+
+<div class="watch_con">
+  <p>What to watch</p>
+  <p>Get more recommendations</p>
+  <div class="sign_up_con">
+    <p>From your WatchList ></p>
+    <p>Sign in to access your Watchlist
+Save shows and movies to keep track of what you want to watch.</p>
+
+<div class="sign_button">Sign in to IMDB</div>
+</div>
+</div>
+
+
+    </div>
+    <section>
+      <h4>Popular</h4>
+      <div class="cards" id="cards">
+        <div class="card">
+          <img src="ave.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div> <!-- card-->
+                <div class="card">
+          <img src="opp.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="joker.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="ave.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="opp.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="joker.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="ave.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="opp.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="joker.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+                <div class="card">
+          <img src="ave.jpg" class="poster">
+          <div class="bottom"><!--rest card-->
+            <div class="cont">
+              <p class="movie_head">Avengers</p>
+          <p class="ratings" ><i class="fa fa-star " style="color: orange;"></i>8.8</p>
+        </div><!-- cont-->
+</div><!--Bottom-->
+        </div>
+  </div><!--cards-->
+  </section>
+  <script type="text/javascript">
+    const movieSearchBox = document.getElementById('search');
+    const searchList = document.getElementById('search_list');
+    const resultGrid = document.getElementById('result_grid');
+
+// load movies from API
+    async function loadMovies(searchTerm){
+      const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=748c3a4f`;
+      const res = await fetch(`${URL}`);
+      const data = await res.json();
+    // console.log(data.Search);
+      if(data.Response == "True") displayMovieList(data.Search);
+    }
+     function findMovies(){
+      let searchTerm = (movieSearchBox.value).trim();
+      if(searchTerm.length > 0){
+        searchList.classList.remove('hide_search_list');
+        loadMovies(searchTerm);
+      } else {
+        searchList.classList.add('hide_search_list');
+      }
+    }
+
+function displayMovieList(movies){
+      searchList.innerHTML = "";
+      for(let idx = 0; idx < movies.length; idx++){
+        let movieListItem = document.createElement('div');
+       movieListItem.dataset.id = movies[idx].imdbID; // setting movie id in  data-id
+        movieListItem.classList.add('search_list_item');
+        if(movies[idx].Poster != "N/A")
+          moviePoster = movies[idx].Poster;
+        else 
+        moviePoster = "image_not_found.png";
+        movieListItem.innerHTML = `
+        <div class = "search_thumbnail">
+        <img src = "${moviePoster}">
+        </div>
+        <div class = "search-item-info">
+        <h3>${movies[idx].Title}</h3>
+        <p>${movies[idx].Year}</p>
+        </div>
+        `;
+        searchList.appendChild(movieListItem);
+      }
+      loadMovieDetails();
+    }
+   function loadMovieDetails() {
+      const searchListMovies = searchList.querySelectorAll('.search_list_item');
+      searchListMovies.forEach(movie => {
+       movie.addEventListener('click', async () => {
+       searchList.classList.add('hide_search_list');
+         movieSearchBox.value = "";
+       const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=748c3a4f`);
+      const movieDetails = await result.json();
+     //  console.log(movieDetails);
+       displayMovieDetails(movieDetails);
+     });
+     });
+    }
+      
+
+  function displayMovieDetails(details) {
+      resultGrid.innerHTML = `
+      <div class="movie_poster">
+        <img src="${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt="movie poster">
+      </div>
+      <div class="movie_info">
+        <h3 class="movie_title">${details.Title}</h3>
+        <ul class="movie_misc_info">
+          <li class="year">Year: ${details.Year}</li>
+          <li class="rated">Ratings: ${details.Rated}</li>
+          <li class="released">Released: ${details.Released}</li>
+        </ul>
+        <p class="genre"><b>Genre:</b> ${details.Genre}</p>
+        <p class="writer"><b>Writer:</b> ${details.Writer}</p>
+        <p class="actors"><b>Actors: </b>${details.Actors}</p>
+        <p class="plot"><b>Plot:</b> ${details.Plot}</p>
+        <p class="language"><b>Language:</b> ${details.Language}</p>
+        <p class="awards"><b><i class="fas fa-award"></i></b> ${details.Awards}</p>
+      </div>
+      `;
+    }
+
+//IMAGE CARO CODE
+let slideIndex = 0;
+
+function showSlides() {
+  const slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 5000);
+}
+
+showSlides();
+
+  setTimeout(IMG_CARO, 5000);
+
+IMG_CARO();
+  </script>
+
+
+</body>
+</html>

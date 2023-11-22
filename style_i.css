@@ -1,0 +1,539 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top {
+  display: flex;
+  height: 70px;
+  margin-top: 10px;
+  position: relative;
+  max-width: 1200px;
+}
+
+.logo {
+  background: #FFDB58;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 20px;
+  position: relative;
+  left: 20px;
+}
+
+.logo p {
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-weight: bolder;
+}
+
+.search_con {
+  background-color: var(--md-dark-color);
+  display: flex;
+  flex-direction: column;
+  /* Stack the containers vertically */
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -60px;
+}
+
+.search_bar {
+  position: relative;
+  left: 90px;
+  display: flex;
+  align-items: center;
+  margin: 3px;
+}
+
+.hide_search_list {
+  display: none;
+}
+
+#search {
+  width: 600px;
+  height: 30px;
+  background-color: #fff;
+
+  color: #000;
+
+  border: none;
+
+  padding: 5px;
+
+}
+
+.hmenu {
+  width: 28px;
+  height: 25px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  left: 110px;
+  padding-top: 1px;
+  top: 5px;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 4px;
+  transition: 0.3s ease;
+}
+
+.search_bar button {
+  background: black;
+  color: white;
+  height: 30px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.search_bar button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.search_bar_container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.search_bar_container h3 {
+  align-self: center;
+  margin-right: 1rem;
+  font-size: 15px;
+  color: white;
+  font-weight: 100;
+  margin-bottom: 1.5rem;
+}
+
+.search_list {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  max-height: 200px;
+  /* Set a specific max-height to trigger the scrollbar */
+  overflow-y: auto;
+  /* Use 'auto' to display the scrollbar only when needed */
+  z-index: 10;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+.search_list .search_list_item {
+  background-color: var(--light-dark-color);
+  padding: 0.5em;
+  border-bottom: 1px solid var(--dark-color);
+  width: calc(350px - 8px);
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.search_list_item {
+  display: flex;
+  align-items: center;
+}
+
+.search_thumbnail img {
+  width: 40px;
+  margin-right: 1rem;
+  border: 1px solid white;
+}
+
+.search_item_info {
+  flex: 1;
+}
+
+.search_item_info h3 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+  color: white;
+}
+
+.search_item_info p {
+  font-size: 14px;
+  margin: 0;
+  color: white;
+  opacity: 0.8;
+}
+
+.hide_search_list {
+  display: none;
+}
+
+.container {
+  padding: 3rem 0;
+}
+
+.movie_poster img {
+  max-width: 300px;
+  margin: 0 auto;
+  border: 4px solid white;
+  left: -30px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.movie_info {
+  text-align: left;
+  color: white;
+  padding: 3rem 0;
+  position: relative;
+  left: -70px;
+}
+
+.movie_title {
+  font-size: 2rem;
+  color: yellow;
+  margin-bottom: 1rem;
+}
+
+.movie_misc_info {
+  list-style-type: none;
+  display: flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content: flex-start; 
+  padding: 1rem;
+  margin:5px;
+  flex-wrap: wrap;
+}
+
+.movie_info li {
+  margin-right: 2rem;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.movie_info .rated {
+  background-color: yellow;
+  padding: 0.4rem 0.8rem; 
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.movie_info .genre {
+  background-color: var(--light-dark-color);
+  padding: 0.4rem 0.8rem; 
+  border-radius: 3px;
+  color: white;
+  position: relative;
+  right: 15px;
+}
+
+.movie_info .awards {
+  color: yellow;
+  margin-top: 10px;
+}
+
+.movie_poster img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+   box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.movie_title:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+
+.movie_info .rated:hover {
+  background-color: orange;
+  color: black;
+  cursor: pointer;
+}
+
+.movie_info .genre:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+.movie_info .awards:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+
+.cards{
+  bottom: -100px;
+  margin: 50px 0px;
+}
+/* Movie card styling */
+section .cards {
+  position: relative;
+  width: 100%;
+  margin-top:20px;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  margin:1px;
+}
+
+/* The extra closing brace (}) below is removed to avoid conflicts */
+section .cards::-webkit-scrollbar {
+  display: none;
+}
+
+section .cards .card {
+  position: relative;
+  min-width:130px;
+  height: 180px;
+  border-radius: 8px;
+  margin: 10px;
+  background: black;
+  transition: .3s linear;
+  color: white;
+  display: block;
+}
+
+section .cards .card:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+
+}
+.bottom{
+  background: linear-gradient(180deg, transparent, black);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index:2;
+  top:-50px;
+  opacity:0;
+  display: block;
+}
+
+section .cards .card .poster {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+section .cards .card:hover .bottom {
+  opacity: 1;
+}
+
+@media (min-width: 800px) {
+  .search_bar_container {
+    flex-direction: row;
+  }
+  .search_bar_container h3 {
+    margin-bottom: 0;
+  }
+  .result_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .movie_poster {
+    left: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  #search {
+    width: 200px;
+    height: 20px;
+  }
+  .search_bar button {
+    height: 20px;
+  }
+  .search_bar {
+    top: -60px;
+    left: 65px;
+  }
+  .search_list {
+    left: 45px;
+    top: -10px;
+  }
+}
+
+.search_list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.search_list::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+/*Image carousel */
+..image_caro {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slide {
+  flex: 0 0 100%;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 450px;
+  border: 2px solid white;
+  object-fit: cover; 
+}
+
+.fade {
+  animation: fadeAnim 2s ease-in-out infinite;
+}
+
+@keyframes fadeAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* Styles for .watch_con */
+.watch_con {
+  color: lightyellow;
+  position: relative;
+
+  display: block;
+  background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background color */
+  padding: 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Add a subtle shadow */
+width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+
+.watch_con p{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.watch_con{
+  position: relative;
+  display: flex;
+  top: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFA500; 
+  color: black; 
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.watchlist::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 6px;
+  opacity: 0;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  animation: pulseAnim 1.5s infinite;
+}
+.watchlist:hover {
+  background-color: #FFD700;
+ transform: translateY(-2px); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sign_up_con {
+  margin-top: 20px;
+  color: white;
+   border-top: 1px solid rgba(255, 255, 255, 0.3); 
+  padding-top: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.sign_up_con p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.sign_button {
+  background-color: #FF4500; 
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sign_button:hover {
+  background-color: #FF6347; 
+  transform: scale(1.05); 
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sign_button:hover::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: #FF6347;
+  animation: underlineAnim 0.3s ease;
+}
+
+@keyframes underlineAnim {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
